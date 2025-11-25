@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CinemaApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="450" Width="800" FontSize="16">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button Content="Билеты" Margin="5" Padding="5" Click="TicketsButton_Click"/>
+        <Button Content="Расписание" Margin="5" Padding="5" Click="ScheduleButton_Click"/>
+    </StackPanel>
 </Window>

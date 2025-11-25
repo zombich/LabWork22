@@ -1,0 +1,17 @@
+﻿<Window x:Class="CinemaApp.TicketsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaApp"
+        mc:Ignorable="d"
+        Title="TicketsWindow" Height="180" Width="200" FontSize="16">
+    <StackPanel>
+        <DockPanel>
+            <Label>Номер билета:</Label>
+            <TextBox x:Name="TicketIdTextBox"/>
+        </DockPanel>
+        <Button Content="Экспортировать в txt" Margin="5" Click="TextExportButton_Click"/>
+        <Button Content="Экспортировать в pdf" Margin="5" Click="PdfExportButton_Click"/>
+    </StackPanel>
+</Window>

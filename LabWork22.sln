@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaApp", "CinemaApp\CinemaApp.csproj", "{C7DDA127-4E12-4944-9577-CECC2F63D5B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaApp", "CinemaApp\CinemaApp.csproj", "{AA6B4667-291D-4B4E-8C24-406FEA4363B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseLibrary", "DatabaseLibrary\DatabaseLibrary.csproj", "{F6602B06-F2D8-4218-ADAE-A55210F56A44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C7DDA127-4E12-4944-9577-CECC2F63D5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7DDA127-4E12-4944-9577-CECC2F63D5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7DDA127-4E12-4944-9577-CECC2F63D5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7DDA127-4E12-4944-9577-CECC2F63D5B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6B4667-291D-4B4E-8C24-406FEA4363B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6B4667-291D-4B4E-8C24-406FEA4363B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6B4667-291D-4B4E-8C24-406FEA4363B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6B4667-291D-4B4E-8C24-406FEA4363B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6602B06-F2D8-4218-ADAE-A55210F56A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6602B06-F2D8-4218-ADAE-A55210F56A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6602B06-F2D8-4218-ADAE-A55210F56A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6602B06-F2D8-4218-ADAE-A55210F56A44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

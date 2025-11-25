@@ -20,5 +20,18 @@ namespace CinemaApp
         {
             InitializeComponent();
         }
+
+        private void TicketsButton_Click(object sender, RoutedEventArgs e)
+        {
+            TicketsWindow window = new();
+            Hide();
+            window.ShowDialog();
+            Show();
+        }
+
+        private void ScheduleButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
