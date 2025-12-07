@@ -2,20 +2,9 @@
 using DatabaseLibrary.Models;
 using DatabaseLibrary.Services;
 using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace CinemaApp
 {
@@ -35,7 +24,7 @@ namespace CinemaApp
             await SaveTicketInfoAsync("txt");
         }
 
-        
+
 
         private async void PdfExportButton_Click(object sender, RoutedEventArgs e)
         {
@@ -96,7 +85,26 @@ namespace CinemaApp
 
         private async Task SaveTicketAsPdf(Ticket ticket)
         {
-            throw new NotImplementedException();
+            var ticketDto = await _service.GetTicketInfoAsync(ticket);
+
+            var wordApp = new Word.Application();
+            wordApp.Visible = true;
+
+            var templateDirectory = System.IO.Path.Combine(Environment.CurrentDirectory, "tickettemplate.docx");
+
+            var document = wordApp.Documents.Add(templateDirectory);
+
+            document.Content.Find.Execute(FindText: "номер билета", ReplaceWith: ticketDto.TicketId);
+            document.Content.Find.Execute(FindText: "Название фильма", ReplaceWith: ticketDto.FilmName);
+            document.Content.Find.Execute(FindText: "чч:мм дд ММММ", ReplaceWith: ticketDto.StartSession);
+            document.Content.Find.Execute(FindText: "название кинотеатра", ReplaceWith: ticketDto.CinemaName);
+            document.Content.Find.Execute(FindText: "номер зала", ReplaceWith: ticketDto.HallId);
+            document.Content.Find.Execute(FindText: "номер ряда", ReplaceWith: ticketDto.Row);
+            document.Content.Find.Execute(FindText: "номер места", ReplaceWith: ticketDto.Seat);
+
+            var savePath = System.IO.Path.Combine(Environment.CurrentDirectory, "ticket.pdf");
+            document.SaveAs2(savePath, Word.WdSaveFormat.wdFormatPDF);
+
         }
     }
 }
